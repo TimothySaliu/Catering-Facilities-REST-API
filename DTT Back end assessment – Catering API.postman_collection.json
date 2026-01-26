@@ -1,0 +1,196 @@
+{
+  "info": {
+    "_postman_id": "b45ad0aa-6d15-4947-88c3-2060b97fc7a0",
+    "name": "DTT Back end assessment – Catering API",
+    "description": "The Postman collection for the DTT backend assessment test: Catering API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51737537",
+    "_collection_link": "https://go.postman.co/collection/51737537-b45ad0aa-6d15-4947-88c3-2060b97fc7a0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Test API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/test",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "test"
+          ]
+        },
+        "description": "API call used to test local development environment and database connection.\n\nShould print _'Hello World!'_ if all is OK."
+      },
+      "response": []
+    },
+    {
+      "name": "Create facility",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"New Facility\",\r\n  \"location_id\": 1,\r\n  \"tags\": [\"Halal\", \"Vegan\"]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/facilities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facilities"
+          ]
+        },
+        "description": "Creates a facility..."
+      },
+      "response": []
+    },
+    {
+      "name": "Get all facilities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/facilities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facilities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get facility by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/facilities/7",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facilities",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update facility",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Updated via Postman\",\r\n  \"tags\": [\"Vegan\"]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/facilities/7",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facilities",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete facility",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/facilities/7",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facilities",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search facilities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/facilities/search?city=ams&tag=veg",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facilities",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "city",
+              "value": "ams"
+            },
+            {
+              "key": "tag",
+              "value": "veg"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost/web_backend_test_catering_api/public"
+    }
+  ]
+}
