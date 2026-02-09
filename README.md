@@ -1,4 +1,4 @@
-# Catering API (Assessment)
+# Catering API
 
 ## Setup
 1. composer install
